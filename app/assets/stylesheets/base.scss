@@ -1,0 +1,12 @@
+.main-body {
+  margin-bottom: 20px;
+}
+
+.jumbotron {
+  background-image: asset-url('jumbotron.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 200px 20px;
+  margin-top: $navbar-height;
+}
