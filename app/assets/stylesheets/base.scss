@@ -1,5 +1,9 @@
 .main-body {
   margin-bottom: 30px;
+
+  body:not([data-controller-name="welcome"]) & {
+    margin-top: $navbar-height;
+  }
 }
 
 .jumbotron {
