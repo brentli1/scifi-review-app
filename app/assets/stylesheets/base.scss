@@ -1,5 +1,5 @@
 .main-body {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .jumbotron {
@@ -7,6 +7,30 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  box-shadow: 0 0 5px #333;
   padding: 200px 20px;
   margin-top: $navbar-height;
+  text-align: center;
+
+  .btn {
+    max-width: 200px;
+    width: 100%;
+  }
+
+  &__icon {
+    color: $brand-primary;
+    font-size: 55px;
+    margin: 0 15px;
+    position: relative;
+    text-shadow: 0 1px 10px #FFF;
+    top: 13px;
+  }
+}
+
+.color--white {
+  color: #FFF;
+}
+
+.font-shadow {
+  text-shadow: 0 1px 10px #333;
 }

@@ -1,3 +1,31 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.page-welcome {
+  &__header {
+    background-color: #2a9daa;
+    box-shadow: 0px 3px 5px #807f7f;
+    color: #FFF;
+    font-weight: 400;
+    margin-bottom: 0;
+    padding: 7px 10px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__details {
+    background-color: #f9f9f9;
+    padding: 20px 15px;
+  }
+
+  &__items {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+
+  &__point {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 300;
+    margin-left: 10px;
+  }
+}

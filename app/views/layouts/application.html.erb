@@ -38,26 +38,18 @@
   </head>
   <body>
 
-    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">ScifiReviewApp</a>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <%= render 'layouts/navigation' %>
 
     <div class="jumbotron">
-    
+      <% if current_user %>
+        
+      <% else %>
+        <h2 class="color--white font-shadow">Welcome to the SciFi Review Emporium.</h2>
+        <h3 class="color--white font-shadow">We watch movies.  We write about them.  We are nerds.</h3>
+        <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary btn-lg' %>
+        <%= icon('hand-spock-o', class: 'jumbotron__icon') %>
+        <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+      <% end %>
     </div>
 
     <div class="container main-body">
@@ -68,9 +60,7 @@
       </div><!--/row-->
     </div> <!-- /container -->
 
-    <footer>
-      <p>&copy; Company 2017</p>
-    </footer>
+    <%= render 'layouts/footer' %>
 
   </body>
 </html>
