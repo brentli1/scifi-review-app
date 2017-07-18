@@ -12,9 +12,26 @@
   margin-top: $navbar-height;
   text-align: center;
 
+  @media (max-width: 640px) {
+    padding: 80px 20px;
+  }
+
   .btn {
+    box-shadow: 0 0 6px 1px #FFF;
     max-width: 200px;
     width: 100%;
+
+    @media (max-width: 640px) {
+      display: block;
+      margin: 0 auto;
+      max-width: 80%;
+    }
+  }
+
+  h3 {
+    @media (max-width: 640px) {
+      margin-bottom: 20px;
+    }
   }
 
   &__icon {
@@ -24,6 +41,12 @@
     position: relative;
     text-shadow: 0 1px 10px #FFF;
     top: 13px;
+
+    @media (max-width: 640px) {
+      display: block;
+      margin: 15px 0;
+      top: 0;
+    }
   }
 }
 
