@@ -1,4 +1,15 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .main-body {
+  flex: 1;
   margin-bottom: 30px;
 
   body:not([data-controller-name="welcome"]) & {
