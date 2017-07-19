@@ -9,8 +9,33 @@ body {
 }
 
 .navbar {
-  &.navbar-right {
-    float: right;
+  .btn {
+    padding: 8px 10px;
+  }
+
+  .navbar-right {
+    height: $navbar-height;
+    line-height: $navbar-height;
+    list-style: none;
+    padding: 0;
+
+    &__item {
+      display: inline-block;
+
+      &:first-child {
+        margin-right: 20px;
+
+        .fa {
+          &:last-child {
+            margin-right: 6px;
+          }
+        }
+
+        .dropdown-toggle {
+          padding: 0 10px !important;
+        }
+      }
+    }
   }
 }
 
