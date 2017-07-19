@@ -21,6 +21,10 @@ body {
   body:not([data-controller-name="welcome"]) & {
     margin-top: calc(#{$navbar-height} + 30px);
   }
+
+  @media(max-width: 767px) {
+    width: 100%;
+  }
 }
 
 .jumbotron {
