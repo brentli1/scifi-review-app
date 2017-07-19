@@ -8,12 +8,18 @@ body {
   height: 100%;
 }
 
+.navbar {
+  &.navbar-right {
+    float: right;
+  }
+}
+
 .main-body {
   flex: 1;
   margin-bottom: 30px;
 
   body:not([data-controller-name="welcome"]) & {
-    margin-top: $navbar-height;
+    margin-top: calc(#{$navbar-height} + 30px);
   }
 }
 

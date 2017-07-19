@@ -1,0 +1,21 @@
+.page-user-show {
+  &__user-info-container {
+    background-color: #eee;
+    box-shadow: 0 2px 2px #b1b1b1;
+    padding: 10px;
+    text-align: center;
+
+    @media(max-width: 991px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .user-image {
+    margin-bottom: 15px;
+  }
+
+  &__user-name {
+    font-size: 22px;
+    font-weight: 600;
+  }
+}

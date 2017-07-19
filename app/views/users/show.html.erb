@@ -1,0 +1,15 @@
+<div class="page-user-show">
+  <div class="page-user-show__user-info-container col-md-3">
+    <%= gravatar_for @user, size: 150 %>
+    <div class="page-user-show__user-name">
+      <%= @user.full_name %>
+    </div>
+  </div>
+
+  <% unless @user.bio.blank? %>
+    <div class="page-user-show__bio-container col-md-9">
+      <h4>About <%= @user.full_name %></h4>
+      <%= @user.bio %>
+    </div>
+  <% end %>
+</div>
