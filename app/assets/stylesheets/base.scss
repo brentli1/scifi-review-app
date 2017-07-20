@@ -8,6 +8,18 @@ body {
   height: 100%;
 }
 
+.no-padding {
+  padding: 0;
+}
+
+.left-padding {
+  padding-left: 25px;
+
+  @media(max-width: 991px) {
+    padding-left: 0;
+  }
+}
+
 .navbar {
   .btn {
     padding: 8px 10px;
