@@ -3,7 +3,9 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
-    @movie_avg = Review.where('movie_id', @movie.id).average(:rating)
+    unless @movie.reviews.blank?
+      @movie_avg = @movie.reviews.average(:rating)
+    end
     @review = Review.new
   end
 

@@ -4,7 +4,9 @@
 <%= @movie.release_date.strftime("%B %d, %Y") %>
 <%= @movie.synopsis %>
 
-<div>AVERAGE RATING IS <%= @movie_avg %></div>
+<% if @movie.reviews.count > 0 %>
+  <div>AVERAGE RATING IS <%= @movie_avg %></div>
+<% end %>
 
 <% @movie.reviews.each do |review| %>
   <div><%= review.review_body %> By - <%= review.user.full_name %> Rating is <%= review.rating %></div>
