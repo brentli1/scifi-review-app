@@ -2,7 +2,7 @@ class CreateMovies < ActiveRecord::Migration
   def change
     create_table :movies do |t|
       t.string :title
-      t.integer :release_date
+      t.date :release_date
       t.text :synopsis
 
       t.timestamps null: false

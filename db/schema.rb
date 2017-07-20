@@ -13,16 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20170720144919) do
 
-  create_table "images", force: :cascade do |t|
-    t.string   "name"
-    t.string   "picture"
-    t.integer  "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "images", ["movie_id"], name: "index_images_on_movie_id"
-
   create_table "movies", force: :cascade do |t|
     t.string   "title"
     t.date     "release_date"
