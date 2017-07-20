@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :images
   devise_for :users, controllers: { registrations: "user/registrations" }
   resources :users, only: [:show]
   # The priority is based upon order of creation: first created -> highest priority.

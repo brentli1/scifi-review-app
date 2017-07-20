@@ -3,6 +3,8 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    @movie_avg = Review.where('movie_id', @movie.id).average(:rating)
+    @review = Review.new
   end
 
   def new
@@ -22,7 +24,7 @@ class MoviesController < ApplicationController
 
   private
   def movie_params
-    params.require(:movie).permit(:title, :release_date, :synopsis)
+    params.require(:movie).permit(:title, :release_date, :synopsis, :image)
   end
 
   def require_admin
