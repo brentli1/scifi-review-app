@@ -1,7 +1,7 @@
 <% if controller.controller_name == 'welcome' %>
   <div class="jumbotron">
     <% if current_user %>
-      
+      <h2 class="color--white font-shadow">Welcome to the SciFi Review Emporium, <%= current_user.full_name || current_user.email %>.</h2>
     <% else %>
       <h2 class="color--white font-shadow">Welcome to the SciFi Review Emporium.</h2>
       <h3 class="color--white font-shadow">We watch movies.  We write about them.  We are nerds.</h3>
