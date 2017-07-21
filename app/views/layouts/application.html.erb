@@ -40,33 +40,12 @@
 
     <%= render 'layouts/navigation' %>
 
-    <% if controller.controller_name == 'welcome' %>
-      <div class="jumbotron">
-        <% if current_user %>
-          
-        <% else %>
-          <h2 class="color--white font-shadow">Welcome to the SciFi Review Emporium.</h2>
-          <h3 class="color--white font-shadow">We watch movies.  We write about them.  We are nerds.</h3>
-          <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary btn-lg' %>
-          <%= icon('hand-spock-o', class: 'jumbotron__icon') %>
-          <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
-        <% end %>
-      </div>
-    <% end %>
+    <%= render 'shared/jumbotron' %>
 
     <div class="container main-body">
-      <% unless flash.blank? %>
-        <div class="row">
-          <div class="col-xs-10 col-xs-offset-1">
-            <% flash.each do |name, msg| %>
-              <div class="alert alert-<%= name %>">
-                <a href="#" class="close" data-dismiss="alert">&#215;</a>
-                <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
+      
+      <%= render 'layouts/messages' %>
+
       <div class="row">
         <div class="col-xs-12">
           <%= yield %>

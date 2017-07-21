@@ -1,0 +1,13 @@
+<% if controller.controller_name == 'welcome' %>
+  <div class="jumbotron">
+    <% if current_user %>
+      
+    <% else %>
+      <h2 class="color--white font-shadow">Welcome to the SciFi Review Emporium.</h2>
+      <h3 class="color--white font-shadow">We watch movies.  We write about them.  We are nerds.</h3>
+      <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary btn-lg' %>
+      <%= icon('hand-spock-o', class: 'jumbotron__icon') %>
+      <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+    <% end %>
+  </div>
+<% end %>

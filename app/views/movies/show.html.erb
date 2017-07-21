@@ -1,30 +1,34 @@
 <%= render 'shared/errors', obj: @review %>
 
-<%= @movie.title %>
-<%= @movie.release_date.strftime("%B %d, %Y") %>
-<%= @movie.synopsis %>
-
-<% if @movie.reviews.count > 0 %>
-  <div>AVERAGE RATING IS <%= @movie_avg %></div>
-<% end %>
-
-<% @movie.reviews.each do |review| %>
-  <div><%= review.review_body %> By - <%= review.user.full_name %> Rating is <%= review.rating %></div>
-<% end %>
-
-<%= form_for(@review, html: { class: 'form-horizontal', role: 'form' }) do |f| %>
-  <%= f.hidden_field :movie_id, value: @movie.id %>
-  <div class="form-group">
-    <%= f.label :rating %>
-    <%= f.select :rating, options_for_select(0..5), class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :review_body %>
-    <%= f.text_area :review_body, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-8">
-      <%= f.submit 'Add Review', class: 'btn btn-primary btn-lg' %>
+<div class="page-movie-show">
+  <div class="row page-movie-show__movie-container">
+    <div class="col-md-4 page-movie-show__fig-container">
+      <figure class="page-movie-show__fig">
+        <%= image_tag @movie.image, class: 'page-movie-show__img' %>
+      </figure>
+    </div>
+    <div class="col-md-8 page-movie-show__details">
+      <h4 class="page-movie-show__title">
+        <%= @movie.title %>
+      </h4>
+      <div class="page-movie-show__release-date">
+        <%= @movie.release_date.strftime("%B %d, %Y") %>
+      </div>
+      <div class="page-movie-show__avg-rating">
+        <% if @movie.reviews.count > 0 %>
+          Average Rating: <%= @movie_avg %>
+        <% else %>
+          No Reviews Yet!
+        <% end %>
+      </div>
+      <div class="page-movie-show__description">
+        <strong>Synopsis:</strong> <%= @movie.synopsis %>
+      </div>
     </div>
   </div>
-<% end %>
+  
+  <%= render 'reviews/form' %>
+
+  <%= render 'reviews/review_list', reviews: @movie.reviews %>
+
+</div>

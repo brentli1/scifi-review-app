@@ -9,7 +9,7 @@ class Movie < ActiveRecord::Base
   validates :image, presence: { message: "is required." }
   validate :image_size
 
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   private
   def image_size

@@ -8,6 +8,15 @@ body {
   height: 100%;
 }
 
+img {
+  max-width: 100%;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .no-padding {
   padding: 0;
 }

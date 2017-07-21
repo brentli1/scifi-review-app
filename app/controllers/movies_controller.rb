@@ -1,12 +1,13 @@
 class MoviesController < ApplicationController
   before_action :require_admin, except: [:show]
+  before_action :set_movie, only: [:edit, :show, :update, :destroy]
 
   def show
-    @movie = Movie.find(params[:id])
+    @review = Review.new
+
     unless @movie.reviews.blank?
       @movie_avg = @movie.reviews.average(:rating)
     end
-    @review = Review.new
   end
 
   def new
@@ -24,7 +25,23 @@ class MoviesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @movie.update(movie_params)
+      flash[:success] = "Movie was successfully updated!"
+      redirect_to movie_path(@movie)
+    else
+      render 'edit'
+    end
+  end
+
   private
+  def set_movie
+    @movie = Movie.find(params[:id])
+  end
+
   def movie_params
     params.require(:movie).permit(:title, :release_date, :synopsis, :image)
   end

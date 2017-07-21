@@ -4,3 +4,37 @@
     line-height: 34px;
   }
 }
+
+.page-movie-show {
+  &__movie-container {
+    border-bottom: 1px solid #f7f7f7;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    border-bottom: 4px solid $brand-primary;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  &__avg-rating {
+    margin-bottom: 10px;
+  }
+
+  &__fig-container {
+    @media(min-width: 992px) {
+      padding-left: 0;
+    }
+  }
+
+  &__fig {
+    text-align: center;
+  }
+
+  &__details {
+    @media(min-width: 992px) {
+      padding-right: 0;
+    }
+  }
+}

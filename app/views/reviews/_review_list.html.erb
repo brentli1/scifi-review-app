@@ -1,0 +1,28 @@
+<% unless reviews.blank? %>
+  <div class="review-list">
+    <h4 class="review-list__title">Reviews</h4>
+    <% reviews.each do |review| %>
+      <div class="row review-list__row">
+        <div class="review-list__heading clearfix">
+          <div class="col-md-6 review-list__user">
+            <div>User: <%= review.user.full_name || review.user.email %></div>
+            <div>Rating: <%= review.rating %>/5</div>
+          </div>
+          <div class="col-md-6 review-list__dates">
+            <div>Date Created: <%= review.created_at.strftime("%B %d, %Y") %></div>
+            <div>Last Updated: <%= review.updated_at.strftime("%B %d, %Y") %></div>
+          </div>
+        </div>
+        <div class="col-md-12 review-list__review">
+          <%= truncate(review.review_body, length: 200) %>
+        </div>
+        <div class="col-md-12 review-list__view-more">
+          <%= link_to 'View Full Review', review_path(review), class: 'btn btn-primary btn-xs' %>
+          <% if review.user.id == current_user.id %>
+            <%= link_to 'Edit Review', edit_review_path(review), class: 'btn btn-primary btn-xs' %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
