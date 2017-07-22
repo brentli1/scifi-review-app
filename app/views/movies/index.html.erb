@@ -1,0 +1,11 @@
+<h3>Movies</h3>
+
+<% if @movies.present? %>
+  <%= will_paginate @movies, class: 'pagination-container' %>
+  <div class="page-movies-index__movie-container clearfix">
+    <%= render 'movie_list', movies: @movies %>
+  </div>
+  <%= will_paginate @movies, class: 'pagination-container' %>
+<% else %>
+  No Movies Yet!
+<% end %>

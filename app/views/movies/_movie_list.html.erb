@@ -1,0 +1,12 @@
+<% movies.each do |movie| %>
+  <div class="col-md-3">
+    <div>
+      <%= link_to movie_path(movie) do %>
+        <figure>
+          <%= image_tag movie.image %>
+        </figure>
+        <h4><%= movie.title %></h4>
+      <% end %>
+    </div>
+  </div>
+<% end %>

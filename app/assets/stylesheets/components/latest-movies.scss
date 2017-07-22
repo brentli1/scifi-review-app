@@ -1,0 +1,42 @@
+.latest-movies {
+  &__title {
+    border-bottom: 2px solid $brand-primary;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+
+  &__movie-title-link {
+    color: #000;
+  }
+
+  &__fig {
+    background-size: 100%;
+    background-position: center;
+    margin-bottom: 15px;
+    min-height: 150px;
+    transition: 250ms;
+
+    &:hover {
+      background-size: 125%;
+    }
+  }
+
+  &__cat-container {
+    margin-bottom: 10px;
+  }
+
+  &__cat {
+    background-color: #2a9daa;
+    color: #FFF;
+    display: inline-block;
+    float: left;
+    font-size: 12px;
+    margin: 0 5px 5px 0;
+    padding: 5px 10px;
+
+    &:hover {
+      color: #FFF;
+      background-color: darken(#2a9daa, 10);
+    }
+  }
+}

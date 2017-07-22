@@ -1,31 +1,24 @@
 .page-welcome {
-  &__header {
-    background-color: #2a9daa;
-    box-shadow: 0px 3px 5px #807f7f;
+  &__icon {
+    margin-right: 20px;
+  }
+
+  &__info-header {
     color: #FFF;
-    font-weight: 400;
-    margin-bottom: 10px;
-    padding: 7px 10px;
-    position: relative;
+    margin: 0;
+    padding: 15px 20px;
     text-align: center;
-    text-transform: uppercase;
   }
 
-  &__details {
-    background-color: #f9f9f9;
-    padding: 20px 15px;
-  }
-
-  &__items {
-    list-style: none;
+  &__info-block {
+    background-color: #41656c;
+    border-radius: 5px;
     padding: 0;
-    text-align: center;
   }
 
-  &__point {
-    display: inline-block;
-    font-size: 18px;
-    font-weight: 300;
-    margin-left: 10px;
+  &__info-details {
+    background-color: #fefefe;
+    border-radius: 0 0 5px 5px;
+    padding: 15px;
   }
 }

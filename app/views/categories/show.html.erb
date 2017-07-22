@@ -1,0 +1,18 @@
+<div class="page-category-show">
+  <h3 class="page-category-show__title"><%= @category.name %></h3>
+  <% if current_user.admin? %>
+    <%= link_to 'Edit this Category', edit_category_path(@category), class: 'btn btn-primary btn-xs page-category-show__edit-btn' %>
+  <% end %>
+
+  <% if @category.movies.present? %>
+    <%= will_paginate @cat_movies, class: 'pagination-container' %>
+    <div class="clearfix">
+      <%= render 'movies/movie_list', movies: @cat_movies %>
+    </div>
+    <%= will_paginate @cat_movies, class: 'pagination-container' %>
+  <% else %>
+    <div class="page-category-show__empty">No Movies Yet!</div>
+  <% end %>
+
+  <%= link_to 'Back to Categories', categories_path, class: 'btn btn-primary btn-xs' %>
+</div>

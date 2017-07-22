@@ -12,6 +12,14 @@ img {
   max-width: 100%;
 }
 
+a {
+  transition: 250ms;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .row {
   margin-left: 0;
   margin-right: 0;
@@ -127,4 +135,11 @@ img {
 
 .font-shadow {
   text-shadow: 0 1px 10px #333;
+}
+
+.pagination-container {
+  clear: both;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
 }

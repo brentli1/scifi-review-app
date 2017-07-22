@@ -1,0 +1,27 @@
+.category-item {
+  &__tag {
+    background-color: $brand-primary;
+    color: #FFF;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+
+    &:hover {
+      background-color: darken($brand-primary, 10);
+      color: #FFF;
+    }
+  }
+}
+
+.page-category-show {
+  &__edit-btn {
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+
+  &__empty {
+    margin-bottom: 15px;
+  }
+}

@@ -1,0 +1,25 @@
+<div class="latest-movies">
+  <h3 class="latest-movies__title">Latest Movies</h3>
+
+  <% @latest_movies.each do |movie| %>
+    <div class="col-sm-4">
+      <div class="latest-movies__container">
+        <h4 class="latest-movies__movie-title">
+          <%= link_to movie.title, movie_path(movie), class: 'latest-movies__movie-title-link' %>
+        </h4>
+
+        <%= link_to movie_path(movie), class: 'latest-movies__fig-link' do %>
+          <div class="latest-movies__fig" style="background-image: url(<%= movie.image %>);"></div>
+        <% end %>
+
+        <% unless movie.categories.blank? %>
+          <div class="latest-news__cat-container clearfix">
+            <% movie.categories.limit(2).each do |cat| %>
+              <%= link_to cat.name, category_path(cat), class: 'latest-movies__cat' %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

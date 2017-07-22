@@ -10,6 +10,8 @@ class Movie < ActiveRecord::Base
   validate :image_size
 
   has_many :reviews, dependent: :destroy
+  has_many :movie_categories
+  has_many :categories, through: :movie_categories
 
   private
   def image_size

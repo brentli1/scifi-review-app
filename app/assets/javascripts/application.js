@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 //= require bootstrap-sprockets
+
+$(function() {
+  $('select').selectize();
+});

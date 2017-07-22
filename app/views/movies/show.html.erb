@@ -21,14 +21,40 @@
           No Reviews Yet!
         <% end %>
       </div>
+      
+      <% if @movie.categories.present? %>
+        <div class="page-movie-show__category-container clearfix">
+          <span class="page-movie-show__cat-label"><strong>Categories: </strong></span>
+          <% @movie.categories.each do |cat| %>
+            <%= link_to cat.name, category_path(cat), class: 'page-movie-show__cat' %>
+          <% end %>
+        </div>
+      <% end %>
+      
       <div class="page-movie-show__description">
         <strong>Synopsis:</strong> <%= @movie.synopsis %>
+        <% if current_user.admin? %>
+          <div class="page-movie-show__edit-movie">
+            <%= link_to 'Edit Movie', edit_movie_path(@movie), 
+                                      class: 'btn btn-primary btn-xs' %>
+            <%= link_to 'Remove Movie', movie_path(@movie), 
+                                        method: :delete, 
+                                        data: { confirm: "Are you sure you want to remove this movie and all reviews?" }, 
+                                        class: 'btn btn-primary btn-xs' %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
   
   <%= render 'reviews/form' %>
 
-  <%= render 'reviews/review_list', reviews: @movie.reviews %>
+  <% if @reviews.present? %>
+    <%= will_paginate @reviews, class: 'pagination-container' %>
+    <%= render 'reviews/review_list', reviews: @reviews %>
+    <%= will_paginate @reviews, class: 'pagination-container' %>
+  <% else %>
+    No Reviews Yet!
+  <% end %>
 
 </div>

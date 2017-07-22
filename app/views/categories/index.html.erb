@@ -1,0 +1,11 @@
+<div class="page-categories-index">
+  <h3 class="page-categories-index__title">Categories</h3>
+
+  <% if @categories.present? %>
+    <%= will_paginate @categories, class: 'pagination-container' %>
+    <%= render 'category_list', categories: @categories %>
+    <%= will_paginate @categories, class: 'pagination-container' %>
+  <% else %>
+    No Categories yet!
+  <% end %>
+</div>
