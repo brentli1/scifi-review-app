@@ -1,5 +1,5 @@
-<% categories.each do |cat| %>
-  <div class="col-sm-2 category-item">
-    <%= link_to cat.name, category_path(cat), class: 'category-item__tag' %>
-  </div>
-<% end %>
+<div class="category-list clearfix">
+  <% categories.each do |cat| %>
+    <%= link_to cat.name, category_path(cat), class: 'category-list__item' %>
+  <% end %>
+</div>

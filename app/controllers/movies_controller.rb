@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :require_admin, except: [:show]
+  before_action :require_admin, except: [:show, :index]
   before_action :set_movie, only: [:edit, :show, :update, :destroy]
 
   def index
