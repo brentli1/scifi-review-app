@@ -11,7 +11,7 @@
     </div>
   </div>
   <div class="col-md-12 review-list__review">
-    <%= truncate(@review.review_body, length: 200) %>
+    <%= @review.review_body %>
   </div>
   <div class="col-md-12 review-list__view-more">
     <%= link_to 'Back to Movie', movie_path(@review.movie), class: 'btn btn-primary btn-xs' %>
