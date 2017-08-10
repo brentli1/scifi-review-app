@@ -1,6 +1,6 @@
-<div class="movie-list">
+<ul class="movie-list">
   <% movies.each do |movie| %>
-    <div class="col-sm-4">
+    <li class="col-sm-4">
       <div class="movie-list__container">
         <h4 class="movie-list__movie-title">
           <%= link_to movie.title, movie_path(movie), class: 'movie-list__movie-title-link' %>
@@ -18,6 +18,6 @@
           </div>
         <% end %>
       </div>
-    </div>
+    </li>
   <% end %>
-</div>
+</ul>

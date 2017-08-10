@@ -1,6 +1,7 @@
 <div class="page-welcome">
   <% if current_user %>
-    <%= render 'welcome/latest_movies' %>
+    <h3 class="page-welcome__title">Latest Movies</h3>
+    <%= render 'movies/movie_list', movies: @latest_movies %>
   <% else %>
     <%= render 'welcome/site_info' %>
   <% end %>

@@ -1,11 +1,7 @@
-.latest-movies,
 .movie-list {
-  &__title {
-    border-bottom: 2px solid $brand-primary;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-  }
-
+  list-style: none;
+  padding: 0;
+  
   &__movie-title-link {
     color: #000;
   }
