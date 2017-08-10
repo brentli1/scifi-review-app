@@ -1,12 +1,23 @@
-<% movies.each do |movie| %>
-  <div class="col-md-3">
-    <div>
-      <%= link_to movie_path(movie) do %>
-        <figure>
-          <%= image_tag movie.image %>
-        </figure>
-        <h4><%= movie.title %></h4>
-      <% end %>
+<div class="movie-list">
+  <% movies.each do |movie| %>
+    <div class="col-sm-4">
+      <div class="movie-list__container">
+        <h4 class="movie-list__movie-title">
+          <%= link_to movie.title, movie_path(movie), class: 'movie-list__movie-title-link' %>
+        </h4>
+
+        <%= link_to movie_path(movie), class: 'movie-list__fig-link' do %>
+          <div class="movie-list__fig" style="background-image: url(<%= movie.image %>);"></div>
+        <% end %>
+
+        <% unless movie.categories.blank? %>
+          <div class="movie-list__cat-container clearfix">
+            <% movie.categories.limit(2).each do |cat| %>
+              <%= link_to cat.name, category_path(cat), class: 'movie-list__cat' %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
